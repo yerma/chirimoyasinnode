@@ -21,22 +21,6 @@
 
     <script src="/js/jquery.js"></script>
     <script src="/js/modernizr-custom.js"></script>
-    <script>
-        $.getJSON( "trabajos.json", function( data ) {
-            var items = [];
-            $.each(data, function (key, val) {
-                var item = '<div class="grid__item ' + val.tipo +'">' +
-                    '<a class="grid__link" data-title="'+ val.proyecto +'" data-descripcion="'+ val.descripcion +'"' +
-                    'data-img="'+ val.imgUrl +'" href="#">' +
-                    '<img class="grid__img" src="'+ val.imgUrl +'" alt="' + val.descripcion + '" />' +
-                    '</a></div>';
-
-                items.push(item);
-            });
-
-            $('.grid').append(items);
-        });
-    </script>
 </head>
 <body>
 <div class="header-info navbar-fixed-top no-inicio">
@@ -79,6 +63,7 @@
         <div class="content content--center col-xs-12 col-md-9">
             <div id="grid" class="grid">
                 <div class="grid__sizer"></div>
+
             </div>
         </div>
     </div>
@@ -98,14 +83,61 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
+    <script src="/js/anime.min.js"></script>
     <script src="/js/imagesloaded.pkgd.min.js"></script>
     <script src="/js/masonry.pkgd.min.js"></script>
     <script src="/js/isotope.pkgd.min.js"></script>
-    <script src="/js/anime.min.js"></script>
     <script src="/js/grid.js"></script>
-
     <script>
-        $(window).ready(function() {
+
+        $.getJSON( "trabajos.json", function( data ) {
+            var items = [];
+            $.each(data, function (key, val) {
+                var item = '<div class="grid__item ' + val.tipo +'">' +
+                    '<a class="grid__link" data-title="'+ val.proyecto +'" data-descripcion="'+ val.descripcion +'"' +
+                    ' data-img="'+ val.imgUrl +'" href="#">' +
+                    ' <img class="grid__img" src="'+ val.imgUrl +'" alt="' + val.descripcion + '" />' +
+                    '</a></div>';
+
+                console.log(item);
+                items.push(item);
+            });
+
+            $('.grid').append(items);
+
+        }).done(function () {
+
+            var portafolio = document.querySelector('section#portafolio'),
+                currentGrid = document.querySelector('#grid'),
+                loader = new GridLoaderFx(currentGrid),
+                loadingTimeout;
+
+            window.gridInit= function () {
+                imagesLoaded(portafolio, function() {
+                    var m = new Masonry(grid, {
+                        itemSelector: '.grid__item',
+                        columnWidth: '.grid__sizer',
+                        percentPosition: true,
+                        transitionDuration: 0
+                    });
+                    portafolio.classList.remove('loading');
+                    m.layout();
+                    applyFx();
+                });
+            };
+
+            function applyFx() {
+                clearTimeout(loadingTimeout);
+                currentGrid.classList.add('grid--loading');
+
+                loadingTimeout = setTimeout(function() {
+                    currentGrid.classList.remove('grid--loading');
+                    loader._render();
+                }, 1000);
+            }
+
+            gridInit();
+
             var grid = document.querySelector('.grid');
 
             var iso = new Isotope( '.grid', {
@@ -121,36 +153,35 @@
                 var filterValue = event.target.getAttribute('data-filter');
                 iso.arrange({ filter: filterValue });
             });
-        });
 
-
-        var categorias = Array.from(document.querySelectorAll('.categorias'));
-        categorias.forEach(function (cat) {
-            cat.addEventListener( 'click', function( event ) {
-                // only work with buttons
-                if ( !matchesSelector( event.target, 'button' ) ) {
-                    return;
-                }
-                cat.querySelector('.is-active').classList.remove('is-active');
-                event.target.classList.add('is-active');
+            var categorias = Array.from(document.querySelectorAll('.categorias'));
+            categorias.forEach(function (cat) {
+                cat.addEventListener( 'click', function( event ) {
+                    // only work with buttons
+                    if ( !matchesSelector( event.target, 'button' ) ) {
+                        return;
+                    }
+                    cat.querySelector('.is-active').classList.remove('is-active');
+                    event.target.classList.add('is-active');
+                });
             });
+
+            var imgLinks = Array.from(document.querySelectorAll('.grid__link'));
+            imgLinks.forEach(function (link) {
+                link.addEventListener('click', superFn);
+            });
+
+            var modal = document.querySelector('#myModal .modal-dialog');
+            var modalTitle = document.querySelector('.modal-title');
+
+            var modalDescripcion = document.querySelector('.modal-descripcion');
+            function superFn() {
+                modalTitle.innerHTML = this.dataset.title;
+                modalDescripcion.innerHTML = this.dataset.descripcion;
+                modal.style.backgroundImage = "url(" + this.dataset.img + ")";
+                $('#myModal').modal('show');
+            }
         });
-
-        var imgLinks = Array.from(document.querySelectorAll('.grid__link'));
-        imgLinks.forEach(function (link) {
-            link.addEventListener('click', superFn);
-        });
-
-        var modal = document.querySelector('#myModal .modal-dialog');
-        var modalTitle = document.querySelector('.modal-title');
-
-        var modalDescripcion = document.querySelector('.modal-descripcion');
-        function superFn() {
-            modalTitle.innerHTML = this.dataset.title;
-            modalDescripcion.innerHTML = this.dataset.descripcion;
-            modal.style.backgroundImage = "url(" + this.dataset.img + ")";
-            $('#myModal').modal('show');
-        }
 
     </script>
 </section>

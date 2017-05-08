@@ -22,7 +22,7 @@
                 strokeDashoffset: [anime.setDashoffset, 0],
                 opacity: [
                     {value: [0,1]},
-                    {value: [1,0], duration: 200, easing: 'linear', delay:500}
+                    {value: [1,0], duration: 300, easing: 'linear', delay:500}
                 ]
             },
             animeOpts: {
@@ -141,36 +141,5 @@
     };
 
     window.GridLoaderFx = GridLoaderFx;
-
-    var portafolio = document.querySelector('section#portafolio'),
-        currentGrid = document.querySelector('#grid'),
-        loader = new GridLoaderFx(currentGrid),
-        loadingTimeout;
-
-    function gridInit() {
-        imagesLoaded(currentGrid, function() {
-            var m = new Masonry(grid, {
-                itemSelector: '.grid__item',
-                columnWidth: '.grid__sizer',
-                percentPosition: true,
-                transitionDuration: 0
-            });
-            portafolio.classList.remove('loading');
-            m.layout();
-            applyFx();
-        });
-    }
-
-    function applyFx() {
-        clearTimeout(loadingTimeout);
-        currentGrid.classList.add('grid--loading');
-
-        loadingTimeout = setTimeout(function() {
-            currentGrid.classList.remove('grid--loading');
-            loader._render();
-        }, 1000);
-    }
-
-    gridInit();
 
 })(window);
