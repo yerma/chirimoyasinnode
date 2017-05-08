@@ -3,78 +3,78 @@
     "proyecto": "Ilustración Digital",
     "imgUrl": "img/ilustracion1.jpg",
     "tipo": "ilustracion",
-    "descripcion": "ilustración pájaro"
+    "descripcion": "Ilustración realizada en Photoshop y con tableta digitalizadora"
   },
   {
     "proyecto": "Ilustración Digital",
     "imgUrl": "img/ilustracion2.jpg",
     "tipo": "ilustracion",
-    "descripcion": "ilustración perro"
+    "descripcion": "Ilustración realizada en Autodesk Sketchbook"
   },
   {
     "proyecto": "Diseño 3D",
     "imgUrl": "img/multimedia1.jpg",
     "tipo": "multimedia",
-    "descripcion": "ilustración 3D vino"
+    "descripcion": "Ilustración 3D vino, realizada en Blender"
   },
   {
     "proyecto": "Diseño 3D",
     "imgUrl": "img/multimedia2.jpg",
     "tipo": "multimedia",
-    "descripcion": "logotipo 3D"
+    "descripcion": "Logotipo 3D realizado en Blender"
   },
   {
     "proyecto": "Diseño Web",
     "imgUrl": "img/web1.jpg",
     "tipo": "web",
-    "descripcion": "Sitio Web Museo del Juguete"
+    "descripcion": "Proyecto para el Museo del Juguete. Realizado en HTML5 y CSS3."
   },
   {
-    "proyecto": "Libro Barrio Franklin",
+    "proyecto": "Proyecto Editorial",
     "imgUrl": "img/editorial1.jpg",
     "tipo": "editorial",
-    "descripcion": "Libro Barrio Franklin"
+    "descripcion": "Libro Barrio Franklin y packaging"
   },
   {
-    "proyecto": "Libro Barrio Franklin",
+    "proyecto": "Proyecto Editorial",
     "imgUrl": "img/editorial2.jpg",
     "tipo": "editorial",
-    "descripcion": "Libro Barrio Franklin"
+    "descripcion": "Libro Barrio Franklin - Sobrecubierta con troquel"
   },
   {
-    "proyecto": "Libro Barrio Franklin",
+    "proyecto": "Proyecto Editorial",
     "imgUrl": "img/editorial3.jpg",
     "tipo": "editorial",
-    "descripcion": "Libro Barrio Franklin"
+    "descripcion": "Libro Barrio Franklin - Páginas Interiores"
   },
   {
-    "proyecto": "Libro Barrio Franklin",
+    "proyecto": "Proyecto Editorial",
     "imgUrl": "img/editorial4.jpg",
     "tipo": "editorial",
-    "descripcion": "Libro Barrio Franklin"
+    "descripcion": "Libro Barrio Franklin - Páginas interiores"
   },
   {
-    "proyecto": "Encuadernacion Belga",
+    "proyecto": "Encuadernación",
     "imgUrl": "img/encuadernacion1.jpg",
     "tipo": "encuadernacion",
-    "descripcion": "encuadernacion belga"
+    "descripcion": "Encuadernación belga"
   },
   {
     "proyecto": "Marca ENTE",
     "imgUrl": "img/branding1.jpg",
     "tipo": "branding",
-    "descripcion": "Marca ENTE"
+    "descripcion": "Desarrollo de identidad visual para estudio de tattoo 'Ente'"
   },
   {
     "proyecto": "Marca ENTE",
     "imgUrl": "img/branding2.jpg",
     "tipo": "branding",
-    "descripcion": "Marca ENTE"
+    "descripcion": "Aplicación de logotipo para estudio de tattoo 'Ente'"
   },
   {
-    "proyecto": "Encuadernacion Puntada Larga",
+    "proyecto": "Encuadernación",
     "imgUrl": "img/encuadernacion2.jpg",
     "tipo": "encuadernacion",
-    "descripcion": "encuadernacion puntada larga"
+    "descripcion": "Encuadernación puntada larga, cubierta de cuero"
   }
 ]

@@ -25,6 +25,12 @@ section {
 	padding-top: 100px;
 }
 
+@media screen and (max-width: 750px) {
+	section {
+		margin: 0 5%;
+	}
+}
+
 ul {
 	list-style: none;
 }
@@ -63,6 +69,7 @@ h3 {
 	background: #93C13E;
 	color: #ffffff;
 	box-shadow: 2px 0 5px #000;
+	z-index: 8000;
 }
 
 .header-info ul {
@@ -74,7 +81,8 @@ h3 {
 	margin: 0 10px;
 }
 
-.header-info a {
+.header-info a,
+.header-info button {
 	text-decoration: none;
 	color: #ffffff;
 	display: block;
@@ -102,39 +110,68 @@ h3 {
 	left: 15px;
 	z-index: 999;
 }
-.header-info:after {
-	top: -10px;
-	-webkit-transition: all 0.3s ease-in;
-	-moz-transition: all 0.3s ease-in;
-	-o-transition: all 0.3s ease-in;
+
+@media screen and (min-width: 750px){
+	.header-info:after {
+		top: -10px;
+		-webkit-transition: all 0.3s ease-in;
+		-moz-transition: all 0.3s ease-in;
+		-o-transition: all 0.3s ease-in;
+	}
+
+	.header-info.no-inicio:after {
+		top: initial;
+		content: "";
+		display: block;
+		position: absolute;
+		width: 220px;
+		height: 60px;
+		border: 60px solid #93C13E;
+		border-bottom-color: transparent;
+		border-right-color: transparent;
+		border-left: none;
+		-webkit-transition: all 1s ease-in;
+		-moz-transition: all 1s ease-in ;
+		-o-transition: all 1s ease-in ;
+		transition: all 1s ease-in ;
+		z-index: inherit;
+	}
+
+	.no-inicio .logo-permanente {
+		top: 10px;
+		opacity: 1;
+		z-index: 8500;
+	}
 }
 
-.header-info.no-inicio:after {
-	top: initial;
-	content: "";
-	display: block;
-	position: absolute;
-	width: 220px;
-	height: 60px;
-	border: 60px solid #93C13E;
-	border-bottom-color: transparent;
-	border-right-color: transparent;
-	border-left: none;
-	-webkit-transition: all 1s ease-in;
-	-moz-transition: all 1s ease-in ;
-	-o-transition: all 1s ease-in ;
-	transition: all 1s ease-in ;
-}
-
-.no-inicio .logo-permanente {
-	top: 10px;
-	opacity: 1;
-}
 
 .no-inicio .contact {
 	margin-left: 180px;
 }
+#btn-menu {
+	float: none;
+}
 
+#collapsible-nav {
+	background-color: #565656;
+	position: absolute;
+	width: 100%;
+	top: 63px;
+	right: 0;
+	z-index: 7000;
+	box-shadow: none;
+}
+#collapsible-nav a {
+	padding: 10px;
+	color: #fff;
+}
+
+@media screen and (min-width: 750px) {
+	#collapsible-nav,
+	#collapsible-nav * {
+		display: none;
+	}
+}
 
 /*------ Lateral Navigation --------*/
 nav {
@@ -195,6 +232,7 @@ nav li.active .tooltip {
 
 a.active .mytooltip {
 	opacity: 1;
+	z-index: 9999;
 }
 
 nav a:hover .mytooltip {
@@ -204,7 +242,6 @@ nav a:hover .mytooltip {
 nav a:hover .mytooltip:before {
 	border-right-color: #565656;
 }
-
 
 /*---- Inicio Chirimoya ------*/
 #inicio img {
@@ -482,7 +519,9 @@ nav a:hover .mytooltip:before {
 }
 
 /*-------- Portafolio --------- */
-
+.categorias {
+	margin-bottom: 40px;
+}
 .categorias button {
 	background: none;
 	border: none;
@@ -644,7 +683,6 @@ nav a:hover .mytooltip:before {
 }
 
 #portafolio .content {
-	overflow-y: auto;
 	height: 100%;
 }
 #portafolio .modal-dialog {
@@ -654,25 +692,29 @@ nav a:hover .mytooltip:before {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-color: #000000;
+	position: relative;
+	margin: 5vh auto;
+	min-width: 304px;
 }
 
 #portafolio .modal-header {
 	position: absolute;
 	color: #fff;
-	max-width: 50%;
+	max-width: 85%;
 	min-width: 30%;
-	height: 8vw;
+	height: 90px;
 	bottom: 0;
 	padding-left: 30px;
 	border: none;
 	background: #565656;
+	padding-bottom: 15px;
 }
 
 #portafolio .modal-header:after {
 	content : "";
 	width: 0;
-	height: 8vw;
-	border: 4vw solid #565656;
+	height: 90px;
+	border: 45px solid #565656;
 	border-top-color: transparent;
 	border-right-color: transparent;
 	position: absolute;
@@ -706,7 +748,10 @@ nav a:hover .mytooltip:before {
 
 #portafolio .modal-title {
 	color: #93C13E;
-	font-size: 1.4em;
+	font-size: 1.2em;
+}
+#portafolio .modal-descripcion {
+	font-size: 0.9em;
 }
 
 /*------ Contacto -----*/

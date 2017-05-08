@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="header-info navbar-fixed-top no-inicio">
-    <a class="logo-permanente" href="/"><img src="img/chirilogo-02.svg" alt="Logo Chirimoya"></a>
+    <a class="logo-permanente" href="index.html"><img src="img/chirilogo-02.svg" alt="Logo Chirimoya"></a>
     <div class="container-fluid">
         <ul class="contact pull-left">
             <li><i class="fa fa-phone"></i> +56 9 9999 9999</li>
@@ -33,12 +33,15 @@
         <ul class="rrss pull-right">
             <li><a href="#"><i class="fa fa-instagram fa-lg"></i></a></li>
             <li><a href="http://www.facebook.com/disenochirimoya"><i class="fa fa-facebook fa-lg"></i></a></li>
-            <li><a href="#"><i class="fa fa-search fa-lg"></i></a></li>
+            <li class="hidden-md hidden-lg"><button id="btn-menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsible-nav">
+                <i class="fa fa-bars"></i>
+            </button></li>
+            <!--<li><a href="#"><i class="fa fa-search fa-lg"></i></a></li>-->
         </ul>
     </div>
 </div>
 
-<nav>
+<nav class="hidden-xs">
     <ul>
         <li><a href="index.html"><span class="mytooltip">Inicio</span></a></li>
         <li><a class="active" href="nosotros.html"><span class="mytooltip">Nosotros</span></a></li>
@@ -47,6 +50,17 @@
         <li><a href="contacto.html"><span class="mytooltip">Contacto</span></a></li>
     </ul>
 </nav>
+
+<!-- Mobile Navigation -->
+<div class="collapse navbar-collapse" id="collapsible-nav">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="active"><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="portafolio.html">Portafolio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</div>
 
 <section id="nosotros" class="">
     <div class="row clearfix">
@@ -63,28 +77,28 @@
                 <div>
                     <img src="img/anayn.jpg" alt=""/>
                     <h1>Anayn Pavez</h1>
-                    <p>Some sample text about the article this hexagon leads to</p>
+                    <p>Ventas & Marketing</p>
                 </div>
             </li>
             <li class="yerma">
                 <div>
                     <img src="img/yerma.jpg" alt=""/>
                     <h1>Yermaín Araya</h1>
-                    <p>Some sample text about the article this hexagon leads to</p>
+                    <p>Administración</p>
                 </div>
             </li>
             <li class="hernan">
                 <div>
                     <img src="img/hernan.jpg" alt=""/>
                     <h1>Hernán Urrutia</h1>
-                    <p>Some sample text about the article this hexagon leads to</p>
+                    <p>Diseño Gráfico</p>
                 </div>
             </li>
             <li class="jose">
                 <div>
                     <img src="img/jose.jpg" alt=""/>
                     <h1>José Balmaceda</h1>
-                    <p>Some sample text about the article this hexagon leads to</p>
+                    <p>Producción</p>
                 </div>
             </li>
         </ul>

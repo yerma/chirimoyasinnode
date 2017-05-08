@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="header-info navbar-fixed-top no-inicio">
-    <a class="logo-permanente" href="/"><img src="img/chirilogo-02.svg" alt="Logo Chirimoya"></a>
+    <a class="logo-permanente" href="index.html"><img src="img/chirilogo-02.svg" alt="Logo Chirimoya"></a>
     <div class="container-fluid">
         <ul class="contact pull-left">
             <li><i class="fa fa-phone"></i> +56 9 9999 9999</li>
@@ -33,12 +33,15 @@
         <ul class="rrss pull-right">
             <li><a href="#"><i class="fa fa-instagram fa-lg"></i></a></li>
             <li><a href="http://www.facebook.com/disenochirimoya"><i class="fa fa-facebook fa-lg"></i></a></li>
-            <li><a href="#"><i class="fa fa-search fa-lg"></i></a></li>
+            <li class="hidden-md hidden-lg"><button id="btn-menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsible-nav">
+                <i class="fa fa-bars"></i>
+            </button></li>
+            <!--<li><a href="#"><i class="fa fa-search fa-lg"></i></a></li>-->
         </ul>
     </div>
 </div>
 
-<nav>
+<nav class="hidden-xs">
     <ul>
         <li><a href="index.html"><span class="mytooltip">Inicio</span></a></li>
         <li><a href="nosotros.html"><span class="mytooltip">Nosotros</span></a></li>
@@ -48,9 +51,19 @@
     </ul>
 </nav>
 
+<div class="collapse navbar-collapse" id="collapsible-nav">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li class="active"><a href="portafolio.html">Portafolio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</div>
+
 <section id="portafolio" class="loading js">
     <div class="row">
-        <div class="col-xs-12 col-md-3 categorias">
+        <div class="col-xs-12 col-sm-4 col-md-3 categorias">
             <h3>Conoce nuestro trabajo</h3>
             <button data-filter="*" class="button is-active">Ver todo</button>
             <button data-filter=".branding" class="button">Branding</button>
@@ -60,7 +73,7 @@
             <button data-filter=".ilustracion" class="button">Ilustración</button>
             <button data-filter=".multimedia" class="button">Multimedia</button>
         </div>
-        <div class="content content--center col-xs-12 col-md-9">
+        <div class="content content--center col-xs-12 col-sm-8 col-md-9">
             <div id="grid" class="grid">
                 <div class="grid__sizer"></div>
 
@@ -74,7 +87,7 @@
             <button type="button" class="close" data-dismiss="modal"></button>
             <div class="modal-header">
                 <h4 class="modal-title"></h4>
-                <p class="modal-descripcion"></p>
+                <p class="modal-descripcion hidden-sm hidden-xs"></p>
             </div>
         </div>
     </div>
@@ -98,8 +111,6 @@
                     ' data-img="'+ val.imgUrl +'" href="#">' +
                     ' <img class="grid__img" src="'+ val.imgUrl +'" alt="' + val.descripcion + '" />' +
                     '</a></div>';
-
-                console.log(item);
                 items.push(item);
             });
 
