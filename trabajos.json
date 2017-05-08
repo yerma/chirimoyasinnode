@@ -1,79 +1,79 @@
 [
   {
     "proyecto": "Ilustración Digital",
-    "imgUrl": "/img/ilustracion1.jpg",
+    "imgUrl": "img/ilustracion1.jpg",
     "tipo": "ilustracion",
     "descripcion": "ilustración pájaro"
   },
   {
     "proyecto": "Ilustración Digital",
-    "imgUrl": "/img/ilustracion2.jpg",
+    "imgUrl": "img/ilustracion2.jpg",
     "tipo": "ilustracion",
     "descripcion": "ilustración perro"
   },
   {
     "proyecto": "Diseño 3D",
-    "imgUrl": "/img/multimedia1.jpg",
+    "imgUrl": "img/multimedia1.jpg",
     "tipo": "multimedia",
     "descripcion": "ilustración 3D vino"
   },
   {
     "proyecto": "Diseño 3D",
-    "imgUrl": "/img/multimedia2.jpg",
+    "imgUrl": "img/multimedia2.jpg",
     "tipo": "multimedia",
     "descripcion": "logotipo 3D"
   },
   {
     "proyecto": "Diseño Web",
-    "imgUrl": "/img/web1.jpg",
+    "imgUrl": "img/web1.jpg",
     "tipo": "web",
     "descripcion": "Sitio Web Museo del Juguete"
   },
   {
     "proyecto": "Libro Barrio Franklin",
-    "imgUrl": "/img/editorial1.jpg",
+    "imgUrl": "img/editorial1.jpg",
     "tipo": "editorial",
     "descripcion": "Libro Barrio Franklin"
   },
   {
     "proyecto": "Libro Barrio Franklin",
-    "imgUrl": "/img/editorial2.jpg",
+    "imgUrl": "img/editorial2.jpg",
     "tipo": "editorial",
     "descripcion": "Libro Barrio Franklin"
   },
   {
     "proyecto": "Libro Barrio Franklin",
-    "imgUrl": "/img/editorial3.jpg",
+    "imgUrl": "img/editorial3.jpg",
     "tipo": "editorial",
     "descripcion": "Libro Barrio Franklin"
   },
   {
     "proyecto": "Libro Barrio Franklin",
-    "imgUrl": "/img/editorial4.jpg",
+    "imgUrl": "img/editorial4.jpg",
     "tipo": "editorial",
     "descripcion": "Libro Barrio Franklin"
   },
   {
     "proyecto": "Encuadernacion Belga",
-    "imgUrl": "/img/encuadernacion1.jpg",
+    "imgUrl": "img/encuadernacion1.jpg",
     "tipo": "encuadernacion",
     "descripcion": "encuadernacion belga"
   },
   {
     "proyecto": "Marca ENTE",
-    "imgUrl": "/img/branding1.jpg",
+    "imgUrl": "img/branding1.jpg",
     "tipo": "branding",
     "descripcion": "Marca ENTE"
   },
   {
     "proyecto": "Marca ENTE",
-    "imgUrl": "/img/branding2.jpg",
+    "imgUrl": "img/branding2.jpg",
     "tipo": "branding",
     "descripcion": "Marca ENTE"
   },
   {
     "proyecto": "Encuadernacion Puntada Larga",
-    "imgUrl": "/img/encuadernacion2.jpg",
+    "imgUrl": "img/encuadernacion2.jpg",
     "tipo": "encuadernacion",
     "descripcion": "encuadernacion puntada larga"
   }
