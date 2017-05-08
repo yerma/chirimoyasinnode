@@ -148,7 +148,7 @@
         loadingTimeout;
 
     function gridInit() {
-        imagesLoaded(portafolio, function() {
+        imagesLoaded(currentGrid, function() {
             var m = new Masonry(grid, {
                 itemSelector: '.grid__item',
                 columnWidth: '.grid__sizer',
@@ -156,7 +156,6 @@
                 transitionDuration: 0
             });
             portafolio.classList.remove('loading');
-            console.log(portafolio);
             m.layout();
             applyFx();
         });

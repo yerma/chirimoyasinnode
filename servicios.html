@@ -23,7 +23,7 @@
     <script src="/js/modernizr-custom.js"></script>
 </head>
 <body>
-<div class="header-info navbar-fixed-top">
+<div class="header-info navbar-fixed-top no-inicio">
     <a class="logo-permanente" href="/"><img src="/img/chirilogo-02.svg" alt="Logo Chirimoya"></a>
     <div class="container-fluid">
         <ul class="contact pull-left">
@@ -40,56 +40,67 @@
 
 <nav>
     <ul>
-        <li><a data-target="/"><span class="mytooltip">Inicio</span></a></li>
-        <li><a data-target="nosotros"><span class="mytooltip">Nosotros</span></a></li>
-        <li><a data-target="servicios"><span class="mytooltip">Servicios</span></a></li>
-        <li><a data-target="portafolio"><span class="mytooltip">Portafolio</span></a></li>
-        <li><a data-target="contacto"><span class="mytooltip">Contacto</span></a></li>
+        <li><a href="index.html"><span class="mytooltip">Inicio</span></a></li>
+        <li><a href="nosotros.html"><span class="mytooltip">Nosotros</span></a></li>
+        <li><a class="active" href="servicios.html"><span class="mytooltip">Servicios</span></a></li>
+        <li><a href="portafolio.html"><span class="mytooltip">Portafolio</span></a></li>
+        <li><a href="contacto.html"><span class="mytooltip">Contacto</span></a></li>
     </ul>
 </nav>
 
-{{{body}}}
-
-<script src="/js/classie.js"></script>
-<script src="/js/main.js"></script>
+<section id="servicios" class="">
+    <h3>Qué ofrecemos</h3>
+    <ul id="iconos-servicios">
+        <a class="empty" href="javascript:void(0);"><li></li></a>
+        <a class="empty"href="javascript:void(0);"><li></li></a>
+        <a href="#">
+            <li>
+                <div>
+                    <i class="fa fa-pencil fa-3x"></i>
+                    <h4>Ilustración</h4>
+                </div>
+            </li>
+        </a>
+        <a href="#">
+            <li>
+                <div>
+                    <i class="fa fa-mouse-pointer fa-3x"></i>
+                    <h4>Web</h4>
+                </div>
+            </li>
+        </a>
+        <a href="#">
+            <li>
+                <div>
+                    <i class="fa fa-film fa-3x"></i>
+                    <h4>Multimedia</h4>
+                </div>
+            </li>
+        </a>
+        <a href="#">
+            <li>
+                <div>
+                    <i class="fa fa-book fa-3x"></i>
+                    <h4>Editorial</h4>
+                </div>
+            </li>
+        </a>
+        <a href="#">
+            <li>
+                <div>
+                    <i class="fa fa-tag fa-3x"></i>
+                    <h4>Branding</h4>
+                </div>
+            </li>
+        </a>
+        <a class="empty" href="javascript:void(0);"><li></li></a>
+        <a class="empty" href="javascript:void(0);"><li></li></a>
+    </ul>
+</section>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-<script>
-    var header = document.querySelector('.header-info');
-    var hash = window.location.pathname;
-    if(hash == '/') {
-        header.classList.remove('no-inicio');
-    } else {
-        if(!header.classList.contains('no-inicio')) { header.classList.add('no-inicio'); }
-    }
-
-    $(function(){
-
-        $('nav a').removeClass('active');
-
-        var currentSection = document.querySelector('section').id;
-        if(currentSection === 'inicio') { currentSection = '/'; }
-        var linkActivo = $('a[data-target="'+ currentSection + '"]');
-        linkActivo.addClass('active');
-    });
-
-
-    $('nav a').on('click', function() {
-        var target = this.dataset.target;
-        setTimeout(function () {
-            window.location.href = target;
-        }, 0);
-    });
-
-    $(window).on('load', function () {
-        setTimeout(function () {
-            $('#loading').fadeOut();
-        }, 500);
-    });
-
-</script>
 </body>
 </html>
