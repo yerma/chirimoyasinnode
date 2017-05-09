@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.css">
     <!-- Custom Styles -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
@@ -27,12 +29,12 @@
     <a class="logo-permanente" href="index.html"><img src="img/chirilogo-02.svg" alt="Logo Chirimoya"></a>
     <div class="container-fluid">
         <ul class="contact pull-left">
-            <li><i class="fa fa-phone"></i> +56 9 9999 9999</li>
+            <li><i class="fa fa-phone"></i> +56 9 9560 6589</li>
             <li><i class="fa fa-envelope-o"></i> contacto@chirimoyaestudio.cl</li>
         </ul>
         <ul class="rrss pull-right">
-            <li><a href="#"><i class="fa fa-instagram fa-lg"></i></a></li>
-            <li><a href="http://www.facebook.com/disenochirimoya"><i class="fa fa-facebook fa-lg"></i></a></li>
+            <li><a href="http://www.instagram.com/chirimoyaestudio" target="_blank"><i class="fa fa-instagram fa-lg"></i></a></li>
+            <li><a href="http://www.facebook.com/disenochirimoya" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
             <li class="hidden-md hidden-lg"><button id="btn-menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsible-nav">
                 <i class="fa fa-bars"></i>
             </button></li>
@@ -66,7 +68,7 @@
     <h3>Cuéntanos tus ideas</h3>
     <div class="row">
         <div class="formulario col-xs-12 col-md-6">
-            <form action="">
+            <form>
                 <div class="form-group">
                     <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre">
                 </div>
@@ -76,11 +78,11 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="tel" id="tel" name="tel" class="form-control" placeholder="Teléfono">
+                    <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Teléfono">
                 </div>
 
                 <div class="form-group">
-                    <textarea id="message" name="message" class="form-control" placeholder="Mensaje"></textarea>
+                    <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Mensaje"></textarea>
                 </div>
 
                 <!-- progress button -->
@@ -115,30 +117,47 @@
                     width="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
     </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.js"></script>
+    <script src="js/classie.js"></script>
     <script src="js/uiProgressButton.js"></script>
     <script>
-        var button = document.querySelector('.progress-button');
-        new UIProgressButton( button, {
-            callback : function( instance ) {
-                var progress = 0,
-                    interval = setInterval( function() {
-                        progress = Math.min( progress + Math.random() * 0.1, 1 );
-                        instance.setProgress( progress );
-
-                        if( progress === 1 ) {
-                            instance.stop(1);
-                            clearInterval( interval );
-                        }
-                    }, 150 );
-            }
-        } );
+        $(function(){
+            $('form').submit(function (e) {
+                e.preventDefault();
+                var formData = $('form').serialize();
+                $.ajax({
+                    url: 'form_process.php',
+                    type: 'POST',
+                    data: formData
+                }).done(function () {
+                    swal({
+                        title: '¡Súper!',
+                        text: 'Tu mensaje ha sido enviado.\nTe contactaremos a la brevedad.',
+                        type: 'success',
+                        confirmButtonColor: '#bcbcbc'
+                    });
+                    $('#nombre').val('');
+                    $('#email').val('');
+                    $('#telefono').val('');
+                    $('#mensaje').val('');
+                }).fail(function () {
+                    swal({
+                        title: '¡Oops!',
+                        text: 'Lo sentimos, falló el envío de tu mensaje.\nInténtalo nuevamente.',
+                        type: 'error',
+                        confirmButtonColor: '#bcbcbc'
+                    });
+                });
+            });
+        });
 
     </script>
 </section>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+
 </body>
 </html>
